@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  resources :message_users
   resources :friends
   get 'rooms/show'
+
+  resources :messages
 
   resources :users
   root to: 'visitors#index'
@@ -8,7 +11,6 @@ Rails.application.routes.draw do
   get '/signin' => 'sessions#new', :as => :signin
   get '/signout' => 'sessions#destroy', :as => :signout
   get '/auth/failure' => 'sessions#failure'
-
   	
-mount ActionCable.server => '/cable'
+  mount ActionCable.server => '/cable'
 end
