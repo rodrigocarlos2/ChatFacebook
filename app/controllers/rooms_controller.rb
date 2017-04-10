@@ -1,5 +1,7 @@
 class RoomsController < ApplicationController
   
+  before_action :authenticate_user!
+
   def show
 
   	if Message.count > 0 and current_user!=nil

@@ -6,3 +6,6 @@
 <% if user_signed_in? %>
   <li class='nav-item'><%= link_to 'Users', users_path, class: 'nav-link' %></li>
 <% end %>
+<% if user_signed_in? %>
+  <li class='nav-item'><%= link_to 'Chat', rooms_show_path, class: 'nav-link' %></li>
+<% end %>
